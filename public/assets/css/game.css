@@ -1,0 +1,101 @@
+#tic-tac-toe {
+  margin-top: 150px;
+  margin-bottom: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.game-icon {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.form-item {
+  margin: 20px;
+}
+.form-group .form-item {
+  margin-right: 50px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-board {
+  width: 500px;
+  height: 50px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, auto);
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  border: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.game-board.x .cell:not(.x):not(.circle):hover::after {
+  opacity: 0.2;
+}
+
+.game-board.circle .cell:not(.x):not(.circle):hover::after {
+  opacity: 0.2;
+}
+
+.cell.x,
+.cell.circle {
+  cursor: not-allowed;
+}
+
+.cell.x::after,
+.game-board.x .cell:not(.x):not(.circle):hover::after {
+  content: url("../img/crs.png");
+  height: 50px;
+  width: 50px;
+}
+
+.cell.circle::after,
+.game-board.circle .cell:not(.x):not(.circle):hover::after {
+  content: url("../img/cr.png");
+  height: 50px;
+  width: 50px;
+}
+
+.winning-message {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(26, 25, 25, 0.9);
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 5rem;
+  flex-direction: column;
+}
+
+.winning-message button {
+  cursor: pointer;
+}
+
+.winning-message.show {
+  display: flex;
+}
